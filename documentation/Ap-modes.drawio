@@ -1,0 +1,61 @@
+<mxfile host="app.diagrams.net" modified="2023-11-30T14:27:14.615Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="KIUtdmL2DU40h_Gjj31D" version="22.1.5" type="device">
+  <diagram name="Page-1" id="yjTb7H9BnGj2JPvsx0XB">
+    <mxGraphModel dx="1434" dy="774" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-1" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.pc;" vertex="1" parent="1">
+          <mxGeometry x="68" y="70" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7UOfYzpsR0W2j4Y4ZU4B-2" target="7UOfYzpsR0W2j4Y4ZU4B-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-2" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.iot_thing_vibration_sensor;" vertex="1" parent="1">
+          <mxGeometry x="79" y="180" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-3" value="" style="image;html=1;image=img/lib/clip_art/networking/Wireless_Router_128x128.png" vertex="1" parent="1">
+          <mxGeometry x="610" y="75" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-4" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.pc;" vertex="1" parent="1">
+          <mxGeometry x="440" y="80" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="7UOfYzpsR0W2j4Y4ZU4B-3" target="7UOfYzpsR0W2j4Y4ZU4B-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="7UOfYzpsR0W2j4Y4ZU4B-6" target="7UOfYzpsR0W2j4Y4ZU4B-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-6" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.iot_thing_vibration_sensor;" vertex="1" parent="1">
+          <mxGeometry x="611" y="180" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7UOfYzpsR0W2j4Y4ZU4B-8" target="7UOfYzpsR0W2j4Y4ZU4B-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-8" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.iot_thing_vibration_sensor;" vertex="1" parent="1">
+          <mxGeometry x="200" y="180" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7UOfYzpsR0W2j4Y4ZU4B-9" target="7UOfYzpsR0W2j4Y4ZU4B-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-9" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.iot_thing_vibration_sensor;" vertex="1" parent="1">
+          <mxGeometry x="720" y="76" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-13" value="&lt;h1&gt;Standalone mode&lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="68" y="20" width="230" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-14" value="&lt;h1&gt;Router mode&lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="410" y="20" width="230" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-15" value="The sensor that is turned ON first will act as Acces point for other sensors - max 4 clients" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="60" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-16" value="PC is connected to WiFi Router acting as an Access point - all sensors connect to router" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="425" y="168" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="7UOfYzpsR0W2j4Y4ZU4B-17" value="&lt;div align=&quot;right&quot;&gt;Default SSID: 3motion&lt;/div&gt;&lt;div align=&quot;right&quot;&gt;Default password: datainmotion&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="478" y="30" width="320" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

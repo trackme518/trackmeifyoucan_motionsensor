@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<WLANProfile xmlns="http://www.microsoft.com/networking/WLAN/profile/v1">
+	<name>3motion</name>
+	<SSIDConfig>
+		<SSID>
+			<hex>336D6F74696F6E</hex>
+			<name>3motion</name>
+		</SSID>
+	</SSIDConfig>
+	<connectionType>ESS</connectionType>
+	<connectionMode>auto</connectionMode>
+	<MSM>
+		<security>
+			<authEncryption>
+				<authentication>WPA2PSK</authentication>
+				<encryption>AES</encryption>
+				<useOneX>false</useOneX>
+			</authEncryption>
+			<sharedKey>
+				<keyType>passPhrase</keyType>
+				<protected>true</protected>
+				<keyMaterial>01000000D08C9DDF0115D1118C7A00C04FC297EB0100000047600CB58B287F4C8C53C7A86B1ED339000000000200000000001066000000010000200000007A6554F4A75452EF338AC96049D5D00176CDEDEDBC256C7CBA596337F0FB85D0000000000E8000000002000020000000630076FE7EDC15A320C95EFFE11441CD16B8B917A3D50CDA98E6C97CAAC7F9B510000000B23224EF5F4C6EB60252E8BDE34FA930400000005DD4D079EA8985CBC3583E5F205A9EDD71C8783ABEE26C1615EA6130CFB359B7993379E478BE49382DD8D1A7D63B47FFAB430D070825E37FA2ECAA5E9B3700C3</keyMaterial>
+			</sharedKey>
+		</security>
+	</MSM>
+	<MacRandomization xmlns="http://www.microsoft.com/networking/WLAN/profile/v3">
+		<enableRandomization>false</enableRandomization>
+	</MacRandomization>
+</WLANProfile>

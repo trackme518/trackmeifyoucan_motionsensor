@@ -1,0 +1,1 @@
+netsh advfirewall set domainprofile state on
