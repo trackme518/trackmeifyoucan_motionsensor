@@ -36,7 +36,9 @@ Sensors can be used as an innovative music controller for spatial audio, to soni
 ### Processing Java
 
 ### Python
-
+TBD
+### Touchdesigner
+TBD
 ## Firmware
 
 ### How to flash firmware
