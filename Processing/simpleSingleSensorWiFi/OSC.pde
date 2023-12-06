@@ -12,8 +12,6 @@ void initOSC() {
   loadedOSC = true;
 }
 
-//long osctimer = 0; //debug throttling
-
 //PARSE OSC
 void oscEvent(OscMessage m) {
   if (!loadedOSC) {
