@@ -1,7 +1,7 @@
 # Data in Motion - Wireless motion sensor with OSC that makes music - Trackmeifyoucan
 
 ## About
-We have developed wireless motion sensors that send OSC events, including 3D rotation and acceleration, and detect throws and catches. You can recieve data directly in any DAW (think Ableton, Protools, Reaper…) to receive the events and map them to sound. This is NO CODE PLUG & PLAY project. However, we also provide extensive posibilities for people, who can and want to code using Touchdesigner, Processing, Python and more. 
+We have developed wireless motion sensors that send OSC events, including 3D rotation and acceleration, and detect throws and catches. You can recieve data directly in any DAW (think Ableton, Protools, Reaper…) to receive the events and map them to sound. This is NO CODE PLUG & PLAY project. However, we also provide extensive posibilities for people, who can and want to code using Touchdesigner, Processing, Python and more. Project started as a university research at Czech Technical University in Prague (Prague,CZ) and we collaborate with [The Tangible Music Lab](https://tamlab.kunstuni-linz.at/) (Linz, AT), [Sync-ID group](https://www.htw-dresden.de/hochschule/fakultaeten/info-math/forschung/tactile-vision/sync-id) (Dresden,DE) and [UMIACS](https://www.umiacs.umd.edu/), Maryland University (College Park, Maryland, USA). 
 
 We sell readymade hardware sensors with software examples, offering paid IT support and keyturn solutions at https://trackmeifyoucan.com. 
 
@@ -64,16 +64,26 @@ Drag & drop the downloaded plugin to Ableton MIDI track - you will see the plugi
 
 ![Screenshot of OSCmapper plugin inside Ableton](/Ableton/Ableton11+/images/oscmapperscreenshot.jpg)
 
+
+#### Ardour
+[Ardour](https://ardour.org/) is a third party, cross-platform open source DAW (we are not affiliated) with native OSC support. It has all the features you want from DAW, including VST support. You can build it for free or download the build for your platform for 1 usd. 
+
+TBD
+
 ### Processing Java
 1. ![Download Processing](https://processing.org/download).
 2. ![Download libraries (OSCp5, toxicLibs, udp)](/Processing/processingLibraries.zip). 
-3. Unzip libraries and copy the contents into your Processing Libraries folder (on Windows that would typically be C:\Users\leisc\Documents\Processing\libraries)
+3. Unzip libraries and copy the contents into your Processing Libraries folder (on Windows that would typically be `C:\Users\yourname\Documents\Processing\libraries`)
 4. Open and run examples (double click .pde file and click play icon inside Processing PDE)
 
 * simpleSingleSensorWiFi
     * Basic example for one sensor and how to recieve data over WiFi
+* simpleSingleSensorSerial
+    * Basic example for one sensor and how to recieve data over Serial (USB). You need to provide the Serial name (something like "COM3" on Windows)
+* singleSensorSerialAutomatic
+    * single sensor connected over serial that can automatically pair with the right serial port - using object oriented class 
 * moduleManagerAPI
-    * complex example on how to manage multiple sensors and recieve data over WiFi OR USB Serial. It also illustrates how you can automate the connect requests even if do not know the serial name or IP of the sensor.  
+    * complex example on how to manage multiple sensors and recieve data over WiFi OR USB Serial. It also illustrates how you can automate the connect requests even if do not know the serial name or IP of the sensor. Includes all OSC commands inside Module class.
 
 ### Python
 TBD
@@ -90,16 +100,10 @@ TBD
 6. Confirm the name of the serial port by pressing any key
 7. Watch the upload progress, after it finished, reset or unplug the board - you are done.
 
-### How to modify firmware
-1. Install [Arduino](https://www.arduino.cc/en/software "Arduino") Arduino IDE 2.2.1
-2. Add board definition: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
-3. Install board definition for esp32-dev 2.0.14 (version matters!)
-4. Install additional arduino libraries (MPU6050, OSC)
-5. Compile and upload to board
-
-## Instructions for how people can help.
-
-XXXXX
+## Contribute and help
+* you found a bug - create an issue here 
+* you made a project using provided examples - we encourgae you to share it - you can send us photos and or video to [contact](https://trackmeifyoucan.com/contact/) with "project showcase" in subject. We will share it on the website, creating a gallery of cool projects. You can also share your code here - create a pull request or send us zipped file over email / wetransfer.
+* you developed new feature / created API for new software - create a pull request or send us the code over [email](https://trackmeifyoucan.com/contact/), we will include it in this repository and add a readme for it. 
 
 ## License
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). When using or distributing the code, give a credit in the form of "DataInMotion (https://trackmeifyoucan.com)". Please refer to the [licence](https://creativecommons.org/licenses/by-nc-sa/4.0/). Author is not liable for any damage caused by the software. Usage of the software is completely at your own risk. For commercial licensing please [contact](https://trackmeifyoucan.com/contact/) us.  
