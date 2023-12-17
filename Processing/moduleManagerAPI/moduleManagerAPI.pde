@@ -35,14 +35,20 @@ void draw() {
 
   moduleManager.run(); //update and render individual module instances
 
+  serialManager.scanSerialInterfaces(); //when send connecte request over serial, listen for response
+
   fill(255);
   textSize(24);
   text("WiFi: 3motion, pass: datainmotion OR use an USB cable", 30, 40);
   text("'c' = connect, 'd' = disconnect, 's' = toggle usb/wifi mode", 30, 80);
-  text("modules connected: "+moduleManager.count(), 30, 120);
+  String mode = "WiFi";
+  if (serialEnabledGlobal) {
+    mode = "Serial";
+  }
+  text("modules connected: "+moduleManager.count()+" mode: "+mode, 30, 120);
 
   if ( frameCount%10==0 ) {
-     //display FPS of the main program thread and also OSC bundles 
+    //display FPS of the main program thread and also OSC bundles
     surface.setTitle("www.trackmeifyoucan.com fps: "+round(frameRate)+" OSC pps: "+oscMsgPerSecondCount );
   }
 }

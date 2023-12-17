@@ -126,7 +126,8 @@ class SerialManager {
         lastSerialPingTime = millis();
         pingSerialIndex++;
         if ( pingSerialIndex >avaliableSerialPorts.length-1) { //we tried all of them
-          stopSerialPortScan(); //serial was not
+          stopSerialPortScan(); //serial was not found
+          println("serial port scan ended - no response recieved");
         }
       }
     }
