@@ -35,6 +35,7 @@ Sensors can be used as an innovative music controller for spatial audio, to soni
 2. Wait for WiFi to start - connect to "3motion", password "datainmotion"
 3. Make sure that sensor is sending data to your PC - you have two options:
     - Use our controlApp
+        - Download latest release of stand-alone [controlApp](https://github.com/trackme518/trackmeifyoucan_motionsensor/releases) - you don't need to install it, just unzip it and run it.
         - Inside the controlApp click connect
         - Enable OSC proxy ( you are using OSC plugins inside DAW / Python / Processing ) OR enable MIDI proxy (choose MIDI device that you can recieve inside DAW)
     - set your PC IP to static.
