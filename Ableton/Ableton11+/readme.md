@@ -2,14 +2,17 @@
 
 ## Plugins to recieve OSC
 
-* [OSCmapper](MaxOSCMIDIEffects/OSCmapper.amxd)
-    * Use this to map any named OSC attribute to any Ableton effect parameter, for example you can map "/motion/idofsensor/ypr/y" to track volume, track pan or parameter of the delay effect....  
-* [oscToMidiNote](oscToMidiNote.amxd)
-    * Use to send MIDI note on OSC message recieved. Typically you use this for event "/catch" 
-* [noteTimeOut](noteTimeOut.amxd)
+* OSCmapper
+    * Use this to map any named OSC attribute to any Ableton effect parameter, for example you can map "/motion/idofsensor/ypr/y" to track volume, track pan or parameter of the delay effect....
+* oscToMidiNote
+    * Use to send MIDI note on OSC message recieved. Typically you use this for event "/catch"
+* noteTimeOut
     * lorem ipsum
-* [mapperRow](mapperRow.maxpat)
+* mapperRow
     * lorem ipsum 
+
+## Download
+[Download all plugins](https://github.com/trackme518/trackmeifyoucan_motionsensor/raw/main/Ableton/Ableton11+/MaxOSCMIDIEffects/MaxOSCMIDIEffects.zip)
 
 ## How to
 
