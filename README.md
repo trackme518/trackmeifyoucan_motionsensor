@@ -31,13 +31,43 @@ Sensors can be used as an innovative music controller for spatial audio, to soni
 
 ## How to use - Software
 
+1. Power ON the sensor
+2. Wait for WiFi to start - connect to "3motion", password "datainmotion"
+3. Make sure that sensor is sending data to your PC - you have two options:
+    3.1 Use our controlApp
+        3.1.1 Inside the controlApp click connect
+        3..1.2 Enable OSC proxy ( you are using OSC plugins inside DAW / Python / Processing ) OR enable MIDI proxy (choose MIDI device that you can recieve inside DAW)
+    3.2 set your PC IP to static.
+        3.2.1 sensors send data to X.X.X.230 IP by default. Where X can is range of your WiFi network. If you are not using dedeicated router you should set your PC IP to 11.11.11.230 (can be changed). 
+
 ### NO CODE in any DAW (Ableton, Reaper, Logic,...)
 
 #### Ableton
+Ableton does not natively supports OSC (Open Sound Control protocol). You have two options:
+1. Use our plugins to recieve OSC messages in Ableton (you will need Ableton version 11+)
+2. Use our controlApp to convert OSC messages to MIDI and than recieve MIDI inside Ableton (works for any version) Please note that when using MIDI you will loose some resolution.
 
-See [Ableton 11+](Ableton/Ableton11+/readme.md)
+##### Plugins to recieve OSC
+* OSCmapper
+    * Use this to map any named OSC attribute to any Ableton effect parameter, for example you can map "/motion/idofsensor/ypr/y" to track volume, track pan or parameter of the delay effect....
+* oscToMidiNote
+    * Use to send MIDI note on OSC message recieved. Typically you use this for event "/catch"
+* noteTimeOut
+    * lorem ipsum
+* mapperRow
+    * lorem ipsum
+
+Drag & drop the downloaded plugin to Ableton MIDI track - you will see the plugin appears at the bottom. With "OSCmapper" set the OSC message name you want to recieve (ie "/motion/sensorOSCname/ypr/y" change "sensorOSCname" to your sensor ID). Then set minimum and maximum values, in case of YPR minimum would be 0 and maximum 360. Click "list" button near the track and effect dropdown menu. Choose which track you want to control (ie "Track 1"), choose what effect on that track you want to control (ie "volume mixer"). You should see values changing as you move the sensor.
+
+##### Download
+[Download all plugins](https://github.com/trackme518/trackmeifyoucan_motionsensor/raw/main/Ableton/Ableton11+/MaxOSCMIDIEffects/MaxOSCMIDIEffects.zip)
+
+![Screenshot of OSCmapper plugin inside Ableton](/Ableton/Ableton11+/images/oscmapperscreenshot.jpg)
 
 ### Processing Java
+
+
+![Processing Examples](/Processing)
 
 ### Python
 TBD
