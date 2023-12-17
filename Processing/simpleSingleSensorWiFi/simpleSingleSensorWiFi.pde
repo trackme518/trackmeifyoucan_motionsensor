@@ -9,7 +9,7 @@
 import toxi.geom.Quaternion; //import toxiclibs library for quaternion math
 import java.net.InetAddress;
 
-Quaternion qRotation;
+Quaternion qRotation = new Quaternion(0,0,0,0);
 boolean inAir = false;
 
 //variables for connecting over network
@@ -23,7 +23,7 @@ void keyPressed() {
     oscP5.send( broadcastAddress, "/connect", true);
     println("send connect request");
   } else if (key=='d') {
-    oscP5.send( broadcastAddress, "/connect", false);
+    oscP5.send( broadcastAddress, "/disconnect", false);
     println("send disconnect request");
   }
 }

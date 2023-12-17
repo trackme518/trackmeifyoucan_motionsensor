@@ -65,9 +65,15 @@ Drag & drop the downloaded plugin to Ableton MIDI track - you will see the plugi
 ![Screenshot of OSCmapper plugin inside Ableton](/Ableton/Ableton11+/images/oscmapperscreenshot.jpg)
 
 ### Processing Java
+1. ![Download Processing](https://processing.org/download).
+2. ![Download libraries (OSCp5, toxicLibs, udp)](/Processing/processingLibraries.zip). 
+3. Unzip libraries and copy the contents into your Processing Libraries folder (on Windows that would typically be C:\Users\leisc\Documents\Processing\libraries)
+4. Open and run examples (double click .pde file and click play icon inside Processing PDE)
 
-
-![Processing Examples](/Processing)
+* simpleSingleSensorWiFi
+    * Basic example for one sensor and how to recieve data over WiFi
+* moduleManagerAPI
+    * complex example on how to manage multiple sensors and recieve data over WiFi OR USB Serial. It also illustrates how you can automate the connect requests even if do not know the serial name or IP of the sensor.  
 
 ### Python
 TBD
