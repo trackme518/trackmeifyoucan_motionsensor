@@ -34,11 +34,11 @@ Sensors can be used as an innovative music controller for spatial audio, to soni
 1. Power ON the sensor
 2. Wait for WiFi to start - connect to "3motion", password "datainmotion"
 3. Make sure that sensor is sending data to your PC - you have two options:
-    3.1 Use our controlApp
-        3.1.1 Inside the controlApp click connect
-        3..1.2 Enable OSC proxy ( you are using OSC plugins inside DAW / Python / Processing ) OR enable MIDI proxy (choose MIDI device that you can recieve inside DAW)
-    3.2 set your PC IP to static.
-        3.2.1 sensors send data to X.X.X.230 IP by default. Where X can is range of your WiFi network. If you are not using dedeicated router you should set your PC IP to 11.11.11.230 (can be changed). 
+    3. 1 Use our controlApp
+        3. 1.1 Inside the controlApp click connect
+        3. 1.2 Enable OSC proxy ( you are using OSC plugins inside DAW / Python / Processing ) OR enable MIDI proxy (choose MIDI device that you can recieve inside DAW)
+    3. 2 set your PC IP to static.
+        3. 2.1 sensors send data to X.X.X.230 IP by default. Where X can is range of your WiFi network. If you are not using dedeicated router you should set your PC IP to 11.11.11.230 (can be changed). 
 
 ### NO CODE in any DAW (Ableton, Reaper, Logic,...)
 
