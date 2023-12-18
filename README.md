@@ -91,7 +91,7 @@ All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion
 * `catch` - is trigerred if the sensor was previously in free fall and than we get suddent change in acceleration
 * `raw` - is experimental mode that sends all the data in unprocessed form, currently unstable WIP (theoretically we can achieve 1000Hz polling rate)
 
-#### Send OSC / commands
+#### Send OSC / commands API
 These are optional commands you can send to sensor to change it's settings or behaviour. 
 
 | pattern                 | typetag | description                           | response                       |
