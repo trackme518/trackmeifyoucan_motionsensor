@@ -1,5 +1,8 @@
 # Data in Motion - Wireless motion sensor with OSC that makes music - Trackmeifyoucan
 
+<!--- https://derlin.github.io/bitdowntoc/ -->
+<!--- https://markdownbeautifier.com -->
+
 ## About
 We have developed wireless motion sensors that send OSC events, including 3D rotation and acceleration, and detect throws and catches. You can recieve data directly in any DAW (think Ableton, Protools, Reaper…) to receive the events and map them to sound. This is NO CODE PLUG & PLAY project. However, we also provide extensive posibilities for people, who can and want to code using Touchdesigner, Processing, Python and more. Project started as a university research at Czech Technical University in Prague (Prague,CZ) and we collaborate with [The Tangible Music Lab](https://tamlab.kunstuni-linz.at/) (Linz, AT), [Sync-ID group](https://www.htw-dresden.de/hochschule/fakultaeten/info-math/forschung/tactile-vision/sync-id) (Dresden,DE) and [UMIACS](https://www.umiacs.umd.edu/), Maryland University (College Park, Maryland, USA). 
 
