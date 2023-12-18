@@ -57,8 +57,10 @@ In case your DAW can not recieve OSC or you want simpler workflow you can use ou
 * CC 76 - acceleration Y axis
 * CC 77 - acceleration Z axis
 
+CC stands for ControlChange - special general purpose MIDI event. All MIDI values are beteween 0-127 range (Yaw, Pitch, Roll are remapped from 0-360, acceleration from -32767 to 32768, time in the air from 0 to defined maximum).  
+
 #### OSC
-All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion/63607/ypr`. See the table below for all OSC messages that are sent from sensor to PC. You can recieve these messages in any software of your choice - see examples for Processing, Python, DAW... You can also use our premade controlApp.
+All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion/63607/ypr`. See the table below for all OSC messages that are sent from sensor to PC. You can recieve these messages in any software of your choice - see examples for Processing, Python, DAW... You can also use our premade [controlApp](https://github.com/trackme518/trackmeifyoucan_motionsensor/releases).
 
 #### Recieve OSC
 
