@@ -1,6 +1,6 @@
-<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+# Data in Motion - Wireless motion sensor with OSC that makes music - Trackmeifyoucan
 
-- [Data in Motion - Wireless motion sensor with OSC that makes music - Trackmeifyoucan](#data-in-motion-wireless-motion-sensor-with-osc-that-makes-music-trackmeifyoucan)
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
    * [About](#about)
       + [Use-cases](#use-cases)
    * [Why?](#why)
@@ -30,9 +30,6 @@
    * [Use the [TOC]](#use-the-toc)
 
 <!-- TOC end -->
-
-<!-- TOC --><a name="data-in-motion-wireless-motion-sensor-with-osc-that-makes-music-trackmeifyoucan"></a>
-# Data in Motion - Wireless motion sensor with OSC that makes music - Trackmeifyoucan
 
 <!--- https://derlin.github.io/bitdowntoc/ -->
 <!--- https://markdownbeautifier.com -->
