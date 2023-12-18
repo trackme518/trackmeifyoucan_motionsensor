@@ -61,22 +61,23 @@ In case your DAW can not recieve OSC or you want simpler workflow you can use ou
 All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion/63607/ypr`. See the table below for all OSC messages that are sent from sensor to PC. You can recieve these messages in any software of your choice - see examples for Processing, Python, DAW... You can also use our premade controlApp.
 
 #### Recieve OSC
-| pattern | typetag | min      | max |
-| ----------------------- | ------- | ------ | -------- |
-| /motion/63607/quat                             | ffff           | 0            | 1                |
-| /motion/63607/ypr/                             | fff            | 0            | 360              |
-| /motion/63607/ypr/x                            | f              | 0            | 360              |
-| /motion/63607/ypr/y                            | f              | 0            | 360              |
-| /motion/63607/ypr/z                            | f              | 0            | 360              |
-| /motion/63607/aaWorld                          | fff            | -32767       | 32768            |
-| /motion/63607/aaWorld/x                        | f              | -32767       | 32768            |
-| /motion/63607/aaWorld/y                        | f              | -32767       | 32768            |
-| /motion/63607/aaWorld/z                        | f              | -32767       | 32768            |
-| /motion/63607/aaReal                           | fff            | -32767       | 32768            |
-| /motion/63607/aa                               | fff            | -32767       | 32768            |
-| /motion/63607/raw                              | fffffff        |              |                  |
-| /motion/63607/throw                            | T              | true         | true             |
-| /motion/63607/catch                            | i              | 0            | infinity         |
+
+| pattern                 | typetag | min    | max      | description                                  |
+| ----------------------- | ------- | ------ | -------- | -------------------------------------------- |
+| /motion/63607/quat      | ffff    | 0      | 1        | rotation in Quaternion                       |
+| /motion/63607/ypr/      | fff     | 0      | 360      | rotation in degrees yaw,pitch, roll          |
+| /motion/63607/ypr/y     | f       | 0      | 360      | yaw                                          |
+| /motion/63607/ypr/p     | f       | 0      | 360      | pitch                                        |
+| /motion/63607/ypr/r     | f       | 0      | 360      | roll                                         |
+| /motion/63607/aaWorld   | fff     | -32767 | 32768    | Acceleration adjusted for rotation & gravity |
+| /motion/63607/aaWorld/x | f       | -32767 | 32768    |                                              |
+| /motion/63607/aaWorld/y | f       | -32767 | 32768    |                                              |
+| /motion/63607/aaWorld/z | f       | -32767 | 32768    |                                              |
+| /motion/63607/aaReal    | fff     | -32767 | 32768    |                                              |
+| /motion/63607/aa        | fff     | -32767 | 32768    |                                              |
+| /motion/63607/raw       | fffffff |        |          | experimental WIP                             |
+| /motion/63607/throw     | T       | true   | true     |                                              |
+| /motion/63607/catch     | i       | 0      | infinity |                                              |
 
 * `quat` stands for Quaternion - rotation represented in 4 dimensions (helps to avoid gimbal lock)
 * `ypr` stands for yaw, pitch, roll - rotation represented in degrees. Note that we are sending individual components as well.
