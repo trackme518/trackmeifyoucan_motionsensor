@@ -1,8 +1,43 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [Data in Motion - Wireless motion sensor with OSC that makes music - Trackmeifyoucan](#data-in-motion-wireless-motion-sensor-with-osc-that-makes-music-trackmeifyoucan)
+   * [About](#about)
+      + [Use-cases](#use-cases)
+   * [Why?](#why)
+   * [For who?](#for-who)
+   * [How to use - Software](#how-to-use-software)
+      + [NO CODE in any DAW (Ableton, Reaper, Logic,...)](#no-code-in-any-daw-ableton-reaper-logic)
+         - [MIDI](#midi)
+         - [OSC](#osc)
+         - [Recieve OSC](#recieve-osc)
+         - [Send OSC / commands API](#send-osc-commands-api)
+         - [Ableton](#ableton)
+            * [Plugins to recieve OSC](#plugins-to-recieve-osc)
+            * [Download](#download)
+         - [Ardour](#ardour)
+         - [Reaper](#reaper)
+      + [Processing Java](#processing-java)
+      + [Python](#python)
+      + [Touchdesigner](#touchdesigner)
+   * [How to use - Hardware](#how-to-use-hardware)
+      + [Connect sensor to your PC (standalone, router, AP)](#connect-sensor-to-your-pc-standalone-router-ap)
+   * [Firmware](#firmware)
+      + [How to flash firmware](#how-to-flash-firmware)
+   * [Contribute and help](#contribute-and-help)
+   * [License](#license)
+   * [And a table of contents](#and-a-table-of-contents)
+   * [On   the right](#on-the-right)
+   * [Use the [TOC]](#use-the-toc)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="data-in-motion-wireless-motion-sensor-with-osc-that-makes-music-trackmeifyoucan"></a>
 # Data in Motion - Wireless motion sensor with OSC that makes music - Trackmeifyoucan
 
 <!--- https://derlin.github.io/bitdowntoc/ -->
 <!--- https://markdownbeautifier.com -->
 
+<!-- TOC --><a name="about"></a>
 ## About
 We have developed wireless motion sensors that send OSC events, including 3D rotation and acceleration, and detect throws and catches. You can recieve data directly in any DAW (think Ableton, Protools, Reaper…) to receive the events and map them to sound. This is NO CODE PLUG & PLAY project. However, we also provide extensive posibilities for people, who can and want to code using Touchdesigner, Processing, Python and more. Project started as a university research at Czech Technical University in Prague (Prague,CZ) and we collaborate with [The Tangible Music Lab](https://tamlab.kunstuni-linz.at/) (Linz, AT), [Sync-ID group](https://www.htw-dresden.de/hochschule/fakultaeten/info-math/forschung/tactile-vision/sync-id) (Dresden,DE) and [UMIACS](https://www.umiacs.umd.edu/), Maryland University (College Park, Maryland, USA). 
 
@@ -10,6 +45,7 @@ We sell readymade hardware sensors with software examples, offering paid IT supp
 
 Sensors can be used as an innovative music controller for spatial audio, to sonify dance performance, jugggling, pole dance or anything else. Furthermore, we also have a standalone application in Java for MacOS, Windows, and Linux. You can sue the app to change sensor settings and verify it is working - you don't need it for reading the data elsewhere. 
 
+<!-- TOC --><a name="use-cases"></a>
 ### Use-cases
 * sonify movement performance (think dance, juggling, pole dance)
 * Intuitively control spatial audio in real-time
@@ -19,12 +55,14 @@ Sensors can be used as an innovative music controller for spatial audio, to soni
 * create digital a clone of the product in showroom and control it using the real world object with the sensor attached
 * control theater moving head lights
 
+<!-- TOC --><a name="why"></a>
 ## Why?
 * Spatial audio control is cumbersome with existing interfaces -> we provide an easy-to-use haptic controller so sound engineers/musicians can easily change sound direction during concerts in real time —> qualitative improvement.
 * Movement performers (dancers, circus, theater) want to have music during their performance. They are currently using playback music. We can provide sensors and software to create music based on their movement, enabling them to improvise and react to the audience in real-time without needing an extra person to control the music: new market / new possibilities —> qualitative improvement.
 * Lighting control - the wireless sensor can trigger the next scene or control moving light heads on stage—qualitative improvement.
 * All similar existing sensors offer only a single connection interface such as Bluetooth -> we offer Wi-Fi & Serial. Wi-Fi has a longer range and can integrate with existing network infrastructure such as routers and switches —> quantitative improvement.
 
+<!-- TOC --><a name="for-who"></a>
 ## For who?
 * Musicians
 * Sound engineers
@@ -32,6 +70,7 @@ Sensors can be used as an innovative music controller for spatial audio, to soni
 * Theater
 * Lighting
 
+<!-- TOC --><a name="how-to-use-software"></a>
 ## How to use - Software
 
 1. Power ON the sensor
@@ -44,7 +83,9 @@ Sensors can be used as an innovative music controller for spatial audio, to soni
     - set your PC IP to static.
         - sensors send data to X.X.X.230 IP by default. Where X can is range of your WiFi network. If you are not using dedeicated router you should set your PC IP to 11.11.11.230 (can be changed). 
 
+<!-- TOC --><a name="no-code-in-any-daw-ableton-reaper-logic"></a>
 ### NO CODE in any DAW (Ableton, Reaper, Logic,...)
+<!-- TOC --><a name="midi"></a>
 #### MIDI
 In case your DAW can not recieve OSC or you want simpler workflow you can use our controlApp to convert OSC messages to MIDI. On Windows you will need some sort of virtual MIDI device, we have tested the [LoopBe1](https://www.nerds.de/data/setuploopbe1.exe), free for noncommercial use. In the controlApp click "MIDI" - click "MIDI device" and choose MIDI device you want to send the events to, than clik to toggle to enable "MIDI proxy".  
 
@@ -62,9 +103,11 @@ In case your DAW can not recieve OSC or you want simpler workflow you can use ou
 
 CC stands for ControlChange - special general purpose MIDI event ([list](https://anotherproducer.com/online-tools-for-musicians/midi-cc-list/)). All MIDI values are beteween 0-127 range (Yaw, Pitch, Roll are remapped from 0-360, acceleration from -32767 to 32768, time in the air from 0 to defined maximum). You can use [Hexler Protokol](https://hexler.net/protokol) or [Midi View](https://hautetechnique.com/midi/midiview/) to monitor and debug the MIDI data.  
 
+<!-- TOC --><a name="osc"></a>
 #### OSC
 All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion/63607/ypr`. See the table below for all OSC messages that are sent from sensor to PC. You can recieve these messages in any software of your choice - see examples for Processing, Python, DAW... We encourage you to use our premade [controlApp](https://github.com/trackme518/trackmeifyoucan_motionsensor/releases) that can also record and replay the OSC data you have captured. You can use [Hexler Protokol](https://hexler.net/protokol) to monitor and debug OSC data as well. Furthermore, we have developed standalone [OSCreplay](https://github.com/trackme518/OSCreplay) software if you like to record your experiments into .CSV table (this functionality is included in controlApp as well but OSCreplay is instended for more universal for any OSC devices / traffic).  
 
+<!-- TOC --><a name="recieve-osc"></a>
 #### Recieve OSC
 
 | pattern                 | typetag | min    | max      | description                                  |
@@ -91,6 +134,7 @@ All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion
 * `catch` - is trigerred if the sensor was previously in free fall and than we get suddent change in acceleration
 * `raw` - is experimental mode that sends all the data in unprocessed form, currently unstable WIP (theoretically we can achieve 1000Hz polling rate)
 
+<!-- TOC --><a name="send-osc-commands-api"></a>
 #### Send OSC / commands API
 These are optional commands you can send to sensor to change it's settings or behaviour. 
 
@@ -123,11 +167,13 @@ These are optional commands you can send to sensor to change it's settings or be
 * `/connect/serial` - this will force the sensor to start sending data over USB cable instead of WiFi (altought it can still be connected to the WiFi at the same time). It will auomatically trigger `/mode/serial` set to `true`. The sensor will reply with `prefix/OSCID/connect/serial`, you can listen for this reply to automatically determine to which Serial port the sensor is connected. 
 * `/mode/serial` - toggle between sending data over WiFi (false) or Serial (true)
 
+<!-- TOC --><a name="ableton"></a>
 #### Ableton
 Ableton does not natively supports OSC (Open Sound Control protocol). You have two options:
 1. Use our plugins to recieve OSC messages in Ableton (you will need Ableton version 11+)
 2. Use our controlApp to convert OSC messages to MIDI and than recieve MIDI inside Ableton (works for any version) Please note that when using MIDI you will loose some resolution. See the chapter on MIDI above.
 
+<!-- TOC --><a name="plugins-to-recieve-osc"></a>
 ##### Plugins to recieve OSC
 * OSCmapper
     * Use this to map any named OSC attribute to any Ableton effect parameter, for example you can map "/motion/idofsensor/ypr/y" to track volume, track pan or parameter of the delay effect....
@@ -140,20 +186,24 @@ Ableton does not natively supports OSC (Open Sound Control protocol). You have t
 
 Drag & drop the downloaded plugin to Ableton MIDI track - you will see the plugin appears at the bottom. With "OSCmapper" set the OSC message name you want to recieve (ie "/motion/sensorOSCname/ypr/y" change "sensorOSCname" to your sensor ID). Then set minimum and maximum values, in case of YPR minimum would be 0 and maximum 360. Click "list" button near the track and effect dropdown menu. Choose which track you want to control (ie "Track 1"), choose what effect on that track you want to control (ie "volume mixer"). You should see values changing as you move the sensor.
 
+<!-- TOC --><a name="download"></a>
 ##### Download
 [Download all plugins](https://github.com/trackme518/trackmeifyoucan_motionsensor/raw/main/Ableton/Ableton11+/MaxOSCMIDIEffects/MaxOSCMIDIEffects.zip)
 
 ![Screenshot of OSCmapper plugin inside Ableton](/Ableton/Ableton11+/images/oscmapperscreenshot.jpg)
 
 
+<!-- TOC --><a name="ardour"></a>
 #### Ardour
 [Ardour](https://ardour.org/) is a third party, cross-platform open source DAW (we are not affiliated) with native OSC support. It has all the features you want from DAW, including VST support. You can build it for free or download the build for your platform for 1 usd. 
 
 TBD
 
+<!-- TOC --><a name="reaper"></a>
 #### Reaper
 TBD
 
+<!-- TOC --><a name="processing-java"></a>
 ### Processing Java
 1. ![Download Processing](https://processing.org/download).
 2. ![Download libraries (OSCp5, toxicLibs, udp)](/Processing/processingLibraries.zip). 
@@ -169,16 +219,20 @@ TBD
 * moduleManagerAPI
     * complex example on how to manage multiple sensors and recieve data over WiFi OR USB Serial. It also illustrates how you can automate the connect requests even if do not know the serial name or IP of the sensor. Includes all OSC commands inside Module class.
 
+<!-- TOC --><a name="python"></a>
 ### Python
 TBD
+<!-- TOC --><a name="touchdesigner"></a>
 ### Touchdesigner
 TBD
 
+<!-- TOC --><a name="how-to-use-hardware"></a>
 ## How to use - Hardware
 Please make sure that you connect the battery right way, look for +/- labels on the PCB.
 
 ![Make sure you connect battery to +/- in right way](/documentation/battery_polarity2compress.png)
 
+<!-- TOC --><a name="connect-sensor-to-your-pc-standalone-router-ap"></a>
 ### Connect sensor to your PC (standalone, router, AP)
 You can connect the sensor to your PC in various ways:
 
@@ -189,8 +243,10 @@ You can connect the sensor to your PC in various ways:
 
 ![Make sure you connect battery to +/- in right way](/documentation/Ap-modes.jpg)
 
+<!-- TOC --><a name="firmware"></a>
 ## Firmware
 
+<!-- TOC --><a name="how-to-flash-firmware"></a>
 ### How to flash firmware
 If you bought allinone sensors you don't need to flash the firmware. This is only intended for upgrading or when you have shield only (without microcontroller).
 
@@ -202,10 +258,12 @@ If you bought allinone sensors you don't need to flash the firmware. This is onl
 6. Confirm the name of the serial port by pressing any key
 7. Watch the upload progress, after it finished, reset or unplug the board - you are done.
 
+<!-- TOC --><a name="contribute-and-help"></a>
 ## Contribute and help
 * you found a bug - create an issue here 
 * you made a project using provided examples - we encourgae you to share it - you can send us photos and or video to [contact](https://trackmeifyoucan.com/contact/) with "project showcase" in subject. We will share it on the website, creating a gallery of cool projects. You can also share your code here - create a pull request or send us zipped file over email / wetransfer.
 * you developed new feature / created API for new software - create a pull request or send us the code over [email](https://trackmeifyoucan.com/contact/), we will include it in this repository and add a readme for it. 
 
+<!-- TOC --><a name="license"></a>
 ## License
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). When using or distributing the code, give a credit in the form of "DataInMotion (https://trackmeifyoucan.com)". Please refer to the [licence](https://creativecommons.org/licenses/by-nc-sa/4.0/). Author is not liable for any damage caused by the software. Usage of the software is completely at your own risk. For commercial licensing please [contact](https://trackmeifyoucan.com/contact/) us.  
