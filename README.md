@@ -58,7 +58,7 @@ In case your DAW can not recieve OSC or you want simpler workflow you can use ou
 * CC 77 - acceleration Z axis
 
 #### OSC
-All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion/63607/ypr`. See the table below for all OSC messages that are sent from sensor to PC:
+All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion/63607/ypr`. See the table below for all OSC messages that are sent from sensor to PC. You can recieve these messages in any software of your choice - see examples for Processing, Python, DAW... You can also use our premade controlApp.
 
 #### Recieve OSC
 | pattern | typetag | min      | max |
@@ -86,7 +86,7 @@ All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion
 * `raw` - is experimental mode that sends all the data in unprocessed form, currently unstable WIP (theoretically we can achieve 1000Hz polling rate)
 
 #### Send OSC / commands
-
+These are optional commands you can send to sensor to change it's settings or behaviour. 
 
 | pattern                 | typetag | description                           | response                       |
 | ----------------------- | ------- | ------------------------------------- | ------------------------------ |
@@ -105,14 +105,17 @@ All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion
 | /factoryreset           | null    | revert to default                     | null                           |
 | /preferences/osc/reset  | null    | reset OSC settings                    | null                           |
 | /preferences/imu/reset  | null    | reset calibration data                | null                           |
-| /preferences/wifi/reset | null    | delete WiFi settings                  |                                |
+| /preferences/wifi/reset | null    | delete WiFi settings                  | null                           |
 | /port/set               | i       | change OSC port                       | null                           |
 | /hostidip/set           | i       | chnage host id: X.X.X.Number          | null                           |
 | /resetid                | null    | revert OSC id to default              | prefix/OSCID/newid s           |
 | /id/set                 | s       | change OSC id                         | null                           |
 | /prefix/set             | s       | change OSC prefix                     | null                           |
 
-
+* `/connect` - if you send it without parameter, the sensor will start to send data to IP that the command was sent from. But you can also specify IP in String ("192.168.0.56") to force the sensor to start sending data to different PC. Sensor will by default send data to IP X.X.X.230. This default IP can be changed with command `/hostidip/set`
+* `/hostidip/set` - change the last digit in the IP address (default X.X.X.230) where the sensor send the data when started by default. For example you would send 105 to change the default IP addres to X.X.X.105. Note that first three digits in the IP address are always dynamic. When you use sensor in standalone mode it will be 11.11.11.230 by default, but if you are using dedicated router with DHCP you can have different IP range.
+* `/connect/serial` - this will force the sensor to start sending data over USB cable instead of WiFi (altought it can still be connected to the WiFi at the same time). It will auomatically trigger `/mode/serial` set to `true`. The sensor will reply with `prefix/OSCID/connect/serial`, you can listen for this reply to automatically determine to which Serial port the sensor is connected. 
+* `/mode/serial` - toggle between sending data over WiFi (false) or Serial (true)
 
 #### Ableton
 Ableton does not natively supports OSC (Open Sound Control protocol). You have two options:
