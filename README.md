@@ -77,7 +77,7 @@ All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion
 | /motion/63607/aa        | fff     | -32767 | 32768    |                                              |
 | /motion/63607/raw       | fffffff |        |          | experimental WIP                             |
 | /motion/63607/throw     | T       | true   | true     |                                              |
-| /motion/63607/catch     | i       | 0      | infinity |                                              |
+| /motion/63607/catch     | i       | 0      | infinity | time in milliseconds spent in the air        |
 
 * `quat` stands for Quaternion - rotation represented in 4 dimensions (helps to avoid gimbal lock)
 * `ypr` stands for yaw, pitch, roll - rotation represented in degrees. Note that we are sending individual components as well.
