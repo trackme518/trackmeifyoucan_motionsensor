@@ -60,10 +60,10 @@ In case your DAW can not recieve OSC or you want simpler workflow you can use ou
 * CC 76 - acceleration Y axis
 * CC 77 - acceleration Z axis
 
-CC stands for ControlChange - special general purpose MIDI event. All MIDI values are beteween 0-127 range (Yaw, Pitch, Roll are remapped from 0-360, acceleration from -32767 to 32768, time in the air from 0 to defined maximum).  
+CC stands for ControlChange - special general purpose MIDI event ([list](https://anotherproducer.com/online-tools-for-musicians/midi-cc-list/)). All MIDI values are beteween 0-127 range (Yaw, Pitch, Roll are remapped from 0-360, acceleration from -32767 to 32768, time in the air from 0 to defined maximum). You can use [Hexler Protokol](https://hexler.net/protokol) or [Midi View](https://hautetechnique.com/midi/midiview/) to monitor and debug the MIDI data.  
 
 #### OSC
-All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion/63607/ypr`. See the table below for all OSC messages that are sent from sensor to PC. You can recieve these messages in any software of your choice - see examples for Processing, Python, DAW... You can also use our premade [controlApp](https://github.com/trackme518/trackmeifyoucan_motionsensor/releases).
+All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion/63607/ypr`. See the table below for all OSC messages that are sent from sensor to PC. You can recieve these messages in any software of your choice - see examples for Processing, Python, DAW... We encourage you to use our premade [controlApp](https://github.com/trackme518/trackmeifyoucan_motionsensor/releases) that can also record and replay the OSC data you have captured. You can use [Hexler Protokol](https://hexler.net/protokol) to monitor and debug OSC data as well. Furthermore, we have developed standalone [OSCreplay](https://github.com/trackme518/OSCreplay) software if you like to record your experiments into .CSV table (this functionality is included in controlApp as well but OSCreplay is instended for more universal for any OSC devices / traffic).  
 
 #### Recieve OSC
 
@@ -74,13 +74,13 @@ All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion
 | /motion/63607/ypr/y     | f       | 0      | 360      | yaw                                          |
 | /motion/63607/ypr/p     | f       | 0      | 360      | pitch                                        |
 | /motion/63607/ypr/r     | f       | 0      | 360      | roll                                         |
-| /motion/63607/aaWorld   | fff     | -32767 | 32768    | Acceleration adjusted for rotation & gravity |
-| /motion/63607/aaWorld/x | f       | -32767 | 32768    |                                              |
-| /motion/63607/aaWorld/y | f       | -32767 | 32768    |                                              |
-| /motion/63607/aaWorld/z | f       | -32767 | 32768    |                                              |
-| /motion/63607/aaReal    | fff     | -32767 | 32768    |                                              |
-| /motion/63607/aa        | fff     | -32767 | 32768    |                                              |
-| /motion/63607/raw       | fffffff |        |          | experimental WIP                             |
+| /motion/63607/aaWorld   | iii     | -32767 | 32768    | Acceleration adjusted for rotation & gravity |
+| /motion/63607/aaWorld/x | i       | -32767 | 32768    |                                              |
+| /motion/63607/aaWorld/y | i       | -32767 | 32768    |                                              |
+| /motion/63607/aaWorld/z | i       | -32767 | 32768    |                                              |
+| /motion/63607/aaReal    | iii     | -32767 | 32768    |                                              |
+| /motion/63607/aa        | iii     | -32767 | 32768    |                                              |
+| /motion/63607/raw       | fffffff |        |          | experimental WIP!                            |
 | /motion/63607/throw     | T       | true   | true     |                                              |
 | /motion/63607/catch     | i       | 0      | infinity | time in milliseconds spent in the air        |
 
@@ -173,9 +173,27 @@ TBD
 TBD
 ### Touchdesigner
 TBD
+
+## How to use - Hardware
+Please make sure that you connect the battery right way, look for +/- labels on the PCB.
+
+![Make sure you connect battery to +/- in right way](/documentation/battery_polarity2compress.png)
+
+### Connect sensor to your PC (standalone, router, AP)
+You can connect the sensor to your PC in various ways:
+
+1. USB serial - connect the sensor to your PC with USB-C cable, make sure that B dip switch is OFF
+2. WiFi
+    - standalone mode - just turn on the sensor and it will create a new WiFi network for you (defaults to "3motion" with password "datainmotion"). Connect to WiFi and start [controlApp](https://github.com/trackme518/trackmeifyoucan_motionsensor/releases) or other examples. Please note that the first sensor that is turned on will try to find and connect to default WiFi network, if there is no such network it will create an acces point. All other sensors will than connect to this master sensor. Max 3 other sensors can be connected to master. If you need to connect more sensors you will need dedicated router. We also recommend using dedicated router / AP for better performance during public shows. 
+    - client mode - you can use your exsiting WiFi network / router. Either change your network to match the default ("3motion" with password "datainmotion") or change settings on the sensor to connect to your network. This is obligatory if you have more than 3 sensors.
+
+![Make sure you connect battery to +/- in right way](/documentation/Ap-modes.jpg)
+
 ## Firmware
 
 ### How to flash firmware
+If you bought allinone sensors you don't need to flash the firmware. This is only intended for upgrading or when you have shield only (without microcontroller).
+
 1. Download firmware build XXXXX and unzip it
 2. Download flash script
 3. Move files from build folder into "build" folder inside the flash script
