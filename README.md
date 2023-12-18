@@ -192,6 +192,8 @@ You can connect the sensor to your PC in various ways:
 ## Firmware
 
 ### How to flash firmware
+If you bought allinone sensors you don't need to flash the firmware. This is only intended for upgrading or when you have shield only (without microcontroller).
+
 1. Download firmware build XXXXX and unzip it
 2. Download flash script
 3. Move files from build folder into "build" folder inside the flash script
