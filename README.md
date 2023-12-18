@@ -173,6 +173,22 @@ TBD
 TBD
 ### Touchdesigner
 TBD
+
+## How to use - Hardware
+Please make sure that you connect the battery right way, look for +/- labels on the PCB.
+
+![Make sure you connect battery to +/- in right way](/documentation/battery_polarity2compress.png)
+
+### Connect sensor to your PC (standalone, router, AP)
+You can connect the sensor to your PC in various ways:
+
+1. USB serial - connect the sensor to your PC with USB-C cable, make sure that B dip switch is OFF
+2. WiFi
+    - standalone mode - just turn on the sensor and it will create a new WiFi network for you (defaults to "3motion" with password "datainmotion"). Connect to WiFi and start [controlApp](https://github.com/trackme518/trackmeifyoucan_motionsensor/releases) or other examples. Please note that the first sensor that is turned on will try to find and connect to default WiFi network, if there is no such network it will create an acces point. All other sensors will than connect to this master sensor. Max 3 other sensors can be connected to master. If you need to connect more sensors you will need dedicated router. We also recommend using dedicated router / AP for better performance during public shows. 
+    - client mode - you can use your exsiting WiFi network / router. Either change your network to match the default ("3motion" with password "datainmotion") or change settings on the sensor to connect to your network. This is obligatory if you have more than 3 sensors.
+
+![Make sure you connect battery to +/- in right way](/documentation/Ap-modes.jpg)
+
 ## Firmware
 
 ### How to flash firmware
