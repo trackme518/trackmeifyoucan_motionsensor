@@ -74,13 +74,13 @@ All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion
 | /motion/63607/ypr/y     | f       | 0      | 360      | yaw                                          |
 | /motion/63607/ypr/p     | f       | 0      | 360      | pitch                                        |
 | /motion/63607/ypr/r     | f       | 0      | 360      | roll                                         |
-| /motion/63607/aaWorld   | fff     | -32767 | 32768    | Acceleration adjusted for rotation & gravity |
-| /motion/63607/aaWorld/x | f       | -32767 | 32768    |                                              |
-| /motion/63607/aaWorld/y | f       | -32767 | 32768    |                                              |
-| /motion/63607/aaWorld/z | f       | -32767 | 32768    |                                              |
-| /motion/63607/aaReal    | fff     | -32767 | 32768    |                                              |
-| /motion/63607/aa        | fff     | -32767 | 32768    |                                              |
-| /motion/63607/raw       | fffffff |        |          | experimental WIP                             |
+| /motion/63607/aaWorld   | iii     | -32767 | 32768    | Acceleration adjusted for rotation & gravity |
+| /motion/63607/aaWorld/x | i       | -32767 | 32768    |                                              |
+| /motion/63607/aaWorld/y | i       | -32767 | 32768    |                                              |
+| /motion/63607/aaWorld/z | i       | -32767 | 32768    |                                              |
+| /motion/63607/aaReal    | iii     | -32767 | 32768    |                                              |
+| /motion/63607/aa        | iii     | -32767 | 32768    |                                              |
+| /motion/63607/raw       | fffffff |        |          | experimental WIP!                            |
 | /motion/63607/throw     | T       | true   | true     |                                              |
 | /motion/63607/catch     | i       | 0      | infinity | time in milliseconds spent in the air        |
 
