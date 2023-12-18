@@ -42,11 +42,82 @@ Sensors can be used as an innovative music controller for spatial audio, to soni
         - sensors send data to X.X.X.230 IP by default. Where X can is range of your WiFi network. If you are not using dedeicated router you should set your PC IP to 11.11.11.230 (can be changed). 
 
 ### NO CODE in any DAW (Ableton, Reaper, Logic,...)
+#### MIDI
+In case your DAW can not recieve OSC or you want simpler workflow you can use our controlApp to convert OSC messages to MIDI. On Windows you will need some sort of virtual MIDI device, we have tested the [LoopBe1](https://www.nerds.de/data/setuploopbe1.exe), free for noncommercial use. In the controlApp click "MIDI" - click "MIDI device" and choose MIDI device you want to send the events to, than clik to toggle to enable "MIDI proxy".  
+
+![Screenshot of MIDI settings inside controlApp](/documentation/MIDI_screenshot.png)
+
+* noteOn - always note C (60), velocity 93, each sensor has its own channel (starting at 0)
+* noteOff - always note C (60), velocity 93, each sensor has its own channel (starting at 0)
+* CC 16 - yaw
+* CC 17 - pitch
+* CC 18 - roll
+* CC 19 - airtime (how long it was flying before you catch it)
+* CC 75 - acceleration X axis
+* CC 76 - acceleration Y axis
+* CC 77 - acceleration Z axis
+
+#### OSC
+All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion/63607/ypr`. See the table below for all OSC messages that are sent from sensor to PC:
+
+#### Recieve OSC
+| pattern | typetag | min      | max |
+| ----------------------- | ------- | ------ | -------- |
+| /motion/63607/quat                             | ffff           | 0            | 1                |
+| /motion/63607/ypr/                             | fff            | 0            | 360              |
+| /motion/63607/ypr/x                            | f              | 0            | 360              |
+| /motion/63607/ypr/y                            | f              | 0            | 360              |
+| /motion/63607/ypr/z                            | f              | 0            | 360              |
+| /motion/63607/aaWorld                          | fff            | -32767       | 32768            |
+| /motion/63607/aaWorld/x                        | f              | -32767       | 32768            |
+| /motion/63607/aaWorld/y                        | f              | -32767       | 32768            |
+| /motion/63607/aaWorld/z                        | f              | -32767       | 32768            |
+| /motion/63607/aaReal                           | fff            | -32767       | 32768            |
+| /motion/63607/aa                               | fff            | -32767       | 32768            |
+| /motion/63607/raw                              | fffffff        |              |                  |
+| /motion/63607/throw                            | T              | true         | true             |
+| /motion/63607/catch                            | i              | 0            | infinity         |
+
+* `quat` stands for Quaternion - rotation represented in 4 dimensions (helps to avoid gimbal lock)
+* `ypr` stands for yaw, pitch, roll - rotation represented in degrees. Note that we are sending individual components as well.
+* `aaWorld` stands for Acceleration that is adjusted for gravity vector and rotated using Quaternion reading (ie absolute acceleration)
+* `throw` - is triggered when the sensor is in freefall
+* `catch` - is trigerred if the sensor was previously in free fall and than we get suddent change in acceleration
+* `raw` - is experimental mode that sends all the data in unprocessed form, currently unstable WIP (theoretically we can achieve 1000Hz polling rate)
+
+#### Send OSC / commands
+
+
+| pattern                 | typetag | description                           | response                       |
+| ----------------------- | ------- | ------------------------------------- | ------------------------------ |
+| /connect                | s\*     | send connect WiFi request             | null                           |
+| /disconnect             | null    | stop sending data to this ip          | null                           |
+| /connect/serial         | null    | stop sending data to this ip          | prefix/OSCID/connect/serial  T |
+| /mode/serial            | T       | toggle between Serial=true/Wifi=false | prefix/OSCID/serialmode T      |
+| /restart                | null    | restart controller                    | prefix/OSCID/response s        |
+| /offset                 | null    | set zero orientation                  | null                           |
+| /calibrate              | null    | calibrate IMU                         | null                           |
+| /treshold/throw/set     | i       | change when we detect freefall        | null                           |
+| /treshold/throw/get     | null    | get freefall threshold value          | null                           |
+| /ssid/set               | s       | change WiFi SSID                      | null                           |
+| /ssid/pass              | s       | change WiFi password                  | 32768                          |
+| /wifi/reset             | null    | reset SSID WiFi and password          | prefix/OSCID/ssid & /pass s    |
+| /factoryreset           | null    | revert to default                     | null                           |
+| /preferences/osc/reset  | null    | reset OSC settings                    | null                           |
+| /preferences/imu/reset  | null    | reset calibration data                | null                           |
+| /preferences/wifi/reset | null    | delete WiFi settings                  |                                |
+| /port/set               | i       | change OSC port                       | null                           |
+| /hostidip/set           | i       | chnage host id: X.X.X.Number          | null                           |
+| /resetid                | null    | revert OSC id to default              | prefix/OSCID/newid s           |
+| /id/set                 | s       | change OSC id                         | null                           |
+| /prefix/set             | s       | change OSC prefix                     | null                           |
+
+
 
 #### Ableton
 Ableton does not natively supports OSC (Open Sound Control protocol). You have two options:
 1. Use our plugins to recieve OSC messages in Ableton (you will need Ableton version 11+)
-2. WIP - Use our controlApp to convert OSC messages to MIDI and than recieve MIDI inside Ableton (works for any version) Please note that when using MIDI you will loose some resolution.
+2. Use our controlApp to convert OSC messages to MIDI and than recieve MIDI inside Ableton (works for any version) Please note that when using MIDI you will loose some resolution. See the chapter on MIDI above.
 
 ##### Plugins to recieve OSC
 * OSCmapper
