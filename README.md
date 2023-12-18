@@ -25,10 +25,6 @@
       + [How to flash firmware](#how-to-flash-firmware)
    * [Contribute and help](#contribute-and-help)
    * [License](#license)
-   * [And a table of contents](#and-a-table-of-contents)
-   * [On   the right](#on-the-right)
-   * [Use the [TOC]](#use-the-toc)
-
 <!-- TOC end -->
 
 <!--- https://derlin.github.io/bitdowntoc/ -->
