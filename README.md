@@ -80,7 +80,7 @@ Sensors can be used as an innovative music controller for spatial audio, to soni
 ### NO CODE in any DAW (Ableton, Reaper, Logic,...)
 <!-- TOC --><a name="midi"></a>
 #### MIDI
-In case your DAW can not recieve OSC or you want simpler workflow you can use our controlApp to convert OSC messages to MIDI. On Windows you will need some sort of virtual MIDI device, we have tested the [LoopBe1](https://www.nerds.de/data/setuploopbe1.exe), free for noncommercial use. In the controlApp click "MIDI" - click "MIDI device" and choose MIDI device you want to send the events to, than clik to toggle to enable "MIDI proxy".  
+In case your DAW can not recieve OSC or you want simpler workflow you can use our controlApp to convert OSC messages to MIDI. On Windows you will need some sort of virtual MIDI device. In the controlApp click "MIDI" - click "MIDI device" and choose MIDI device you want to send the events to, than clik to toggle to enable "MIDI proxy".  
 
 ![Screenshot of MIDI settings inside controlApp](/documentation/MIDI_screenshot.png)
 
