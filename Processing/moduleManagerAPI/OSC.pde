@@ -138,7 +138,7 @@ void oscEvent(OscMessage m) {
   //END CHECK FOR PENDULUM OSC MSG
   //-----------------------------------------------------------
   //recieve quaternion rotation
-  if (m.getAddress().contains("quat") && m.checkTypetag("ffff")) {
+  if (m.getAddress().endsWith("quat") && m.checkTypetag("ffff")) {
     oscMsgPerSecondCount++; //note that we are ONLY counting the quat messages - so essentially we are measuring bundles per second - put this outside the function to measure all messages
     //println("quat received");
     Quaternion oscQuat = new Quaternion(m.floatValue(0), m.floatValue(1), m.floatValue(2), m.floatValue(3));//w,x,y,z
@@ -149,7 +149,7 @@ void oscEvent(OscMessage m) {
   }
   //--------------------------------------------------
   //recieve YAW PITCH ROLL rotation format
-  else if (m.getAddress().contains("ypr") && m.checkTypetag("fff")) {
+  else if (m.getAddress().endsWith("ypr") && m.checkTypetag("fff")) {
     PVector yprOsc = new PVector(m.floatValue(0), m.floatValue(1), m.floatValue(2));
     if (currModule != null ) {
       currModule.setYpr(yprOsc);
@@ -157,7 +157,7 @@ void oscEvent(OscMessage m) {
   }
   //----------------------------------------------------
   //recieve World Acceleration
-  else if (m.getAddress().contains("aaWorld") && m.checkTypetag("fff")) {
+  else if (m.getAddress().endsWith("aaWorld") && m.checkTypetag("fff")) {
     PVector accelOsc = new PVector(m.floatValue(0), m.floatValue(1), m.floatValue(2));
     if (currModule != null ) {
       currModule.setAccel(accelOsc);
@@ -165,14 +165,14 @@ void oscEvent(OscMessage m) {
   }
   //----------------------------------------------------
   //recieve throw event
-  else if (m.getAddress().contains("throw")) {
+  else if (m.getAddress().endsWith("throw")) {
     if (currModule != null ) {
       currModule.throwEvent();
     }
   }
   //----------------------------------------------------
   //recieve catch event
-  else if (m.getAddress().contains("catch") && m.checkTypetag("i") ) { //catch with airtime value in millis
+  else if (m.getAddress().endsWith("catch") && m.checkTypetag("i") ) { //catch with airtime value in millis
     //&& m.checkTypetag("T")
     if (currModule != null ) {
       currModule.catchEvent(m.intValue(0)); //ctach event also send time spent in the air between last throw and catch event in milliseconds
@@ -180,7 +180,7 @@ void oscEvent(OscMessage m) {
   }
   //-----------------------------------------------------
   //TBD IMPLEMENT
-  else if (m.getAddress().contains("/treshold/throw")  ) { //not tested yet - response message from sensor after user change
+  else if (m.getAddress().endsWith("/treshold/throw")  ) { //not tested yet - response message from sensor after user change
     println("got reply with threshold value");
     println( "Address: " + m.getAddress()+" from IP: " + m.getIP()+" Typetag: " + m.getTypetag()  );
     int val = m.intValue( 0 );
@@ -190,7 +190,7 @@ void oscEvent(OscMessage m) {
     }
   }
   //----------------------------------------------------
-  else if (m.getAddress().contains("/connect/serial") ) { //recieve OSC over Serial = USB cable instead of WiFi
+  else if (m.getAddress().endsWith("/connect/serial") ) { //recieve OSC over Serial = USB cable instead of WiFi
     if (serialManager != null) {
       println("Serial port with module FOUND");
       serialManager.stopSerialPortScan(); //stop scanning - we found the right one
