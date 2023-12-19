@@ -243,13 +243,11 @@ You can connect the sensor to your PC in various ways:
 ### How to flash firmware
 If you bought allinone sensors you don't need to flash the firmware. This is only intended for upgrading or when you have shield only (without microcontroller).
 
-1. Download firmware build XXXXX and unzip it
-2. Download flash script
-3. Move files from build folder into "build" folder inside the flash script
-4. Run the .bat script, it will open command line
-5. Type the name of the serial port that the board is connected to (for example "COM3"), press any key
-6. Confirm the name of the serial port by pressing any key
-7. Watch the upload progress, after it finished, reset or unplug the board - you are done.
+1. Download [latest firmware build](arduino/flashToolWin.zip) with flash script and unzip it
+2. Run the .bat script, it will open command line
+3. Type the name of the serial port that the board is connected to (for example "COM3"), press any key
+4. Confirm the name of the serial port by pressing any key
+5. Watch the upload progress, after it finishes, unplug the board to reset it - you are done.
 
 <!-- TOC --><a name="contribute-and-help"></a>
 ## Contribute and help
