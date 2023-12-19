@@ -163,6 +163,17 @@ These are optional commands you can send to sensor to change it's settings or be
 * `/connect/serial` - this will force the sensor to start sending data over USB cable instead of WiFi (altought it can still be connected to the WiFi at the same time). It will auomatically trigger `/mode/serial` set to `true`. The sensor will reply with `prefix/OSCID/connect/serial`, you can listen for this reply to automatically determine to which Serial port the sensor is connected. 
 * `/mode/serial` - toggle between sending data over WiFi (false) or Serial (true)
 
+<!-- TOC --><a name="osc-presets"></a>
+#### OSC presets
+You can define your own OSC presets in JSON format. In presets you can rename any OSC command's address and remap it's values. Presets are located in `data/presets/generic.json` folder. Simply copy the example `generic.json` file, rename it, change different `name` parameter and adjust other values as you see fit.
+
+Supported data types inside typetag:
+* `f` - float
+* `i` - integer
+* `T` - boolean
+
+Each command has defined `min` and `max` for incoming command and `min` and `max` for outgoing command. Value is remapped using those values. You also specify `index` - at which position from original command you are taking the value (so if the index is 2 you will take third value from the original command and remap it, 0 is the first one). You can have multiple outgoing commands for single incoming command. 
+
 <!-- TOC --><a name="ableton"></a>
 #### Ableton
 Ableton does not natively supports OSC (Open Sound Control protocol). You have two options:
@@ -262,7 +273,7 @@ If you bought allinone sensors you don't need to flash the firmware. This is onl
 ## Collaborators
 * [@pavelhusa](https://github.com/pavelhusa)
 * [@kukas](https://github.com/kukas)
-* 
+
 <!-- TOC --><a name="license"></a>
 ## License
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). When using or distributing the code, give a credit in the form of "DataInMotion (https://trackmeifyoucan.com)". Please refer to the [licence](https://creativecommons.org/licenses/by-nc-sa/4.0/). Author is not liable for any damage caused by the software. Usage of the software is completely at your own risk. For commercial licensing please [contact](https://trackmeifyoucan.com/contact/) us.  
