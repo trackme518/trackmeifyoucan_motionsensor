@@ -96,7 +96,7 @@ In case your DAW can not recieve OSC or you want simpler workflow you can use ou
 
 CC stands for ControlChange - special general purpose MIDI event ([list](https://anotherproducer.com/online-tools-for-musicians/midi-cc-list/)). All MIDI values are beteween 0-127 range (Yaw, Pitch, Roll are remapped from 0-360, acceleration from -32767 to 32768, time in the air from 0 to defined maximum). You can use [Hexler Protokol](https://hexler.net/protokol) or [Midi View](https://hautetechnique.com/midi/midiview/) to monitor and debug the MIDI data.  
 
-You can create your own MIDI instrument using fs2 SoundFont format. We recommend [Polyphone](https://www.polyphone-soundfonts.com/about-polyphone) to create instrument from individual sound samples. Of course you can just download existing instrument as well.
+You can create your own MIDI instrument using fs2 SoundFont format. We recommend [Polyphone](https://www.polyphone-soundfonts.com/about-polyphone) to create instrument from individual sound samples. Of course you can just download existing instrument as well. ANother useful readymade plugin is the [LSP sampler](https://lsp-plug.in/?page=manuals&section=multisampler_x12).
 
 <!-- TOC --><a name="osc"></a>
 #### OSC
