@@ -201,7 +201,7 @@ TBD
 <!-- TOC --><a name="processing-java"></a>
 ### Processing Java
 1. ![Download Processing](https://processing.org/download).
-2. ![Download libraries (OSCp5, toxicLibs, udp)](/Processing/processingLibraries.zip). 
+2. ![Download libraries (OSCp5, toxicLibs, udp)](/Processing/processingLibraries.zip) - note that we are using modified version of some of the libraries so make sure to use ones from this repository. 
 3. Unzip libraries and copy the contents into your Processing Libraries folder (on Windows that would typically be `C:\Users\yourname\Documents\Processing\libraries`)
 4. Open and run examples (double click .pde file and click play icon inside Processing PDE)
 
