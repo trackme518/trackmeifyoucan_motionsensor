@@ -36,7 +36,7 @@ We have developed wireless motion sensors that send OSC events, including 3D rot
 
 We sell readymade hardware sensors with software examples, offering paid IT support and keyturn solutions at https://trackmeifyoucan.com. 
 
-Sensors can be used as an innovative music controller for spatial audio, to sonify dance performance, jugggling, pole dance or anything else. Furthermore, we also have a standalone application in Java for MacOS, Windows, and Linux. You can sue the app to change sensor settings and verify it is working - you don't need it for reading the data elsewhere. 
+Sensors can be used as an innovative music controller for spatial audio, to sonify dance performance, jugggling, pole dance or anything else. Furthermore, we also have a standalone application in Java for MacOS, Windows, and Linux. You can use the app to change sensor settings and to verify it is working - you don't need it for reading the data elsewhere. 
 
 <!-- TOC --><a name="use-cases"></a>
 ### Use-cases
