@@ -96,6 +96,8 @@ In case your DAW can not recieve OSC or you want simpler workflow you can use ou
 
 CC stands for ControlChange - special general purpose MIDI event ([list](https://anotherproducer.com/online-tools-for-musicians/midi-cc-list/)). All MIDI values are beteween 0-127 range (Yaw, Pitch, Roll are remapped from 0-360, acceleration from -32767 to 32768, time in the air from 0 to defined maximum). You can use [Hexler Protokol](https://hexler.net/protokol) or [Midi View](https://hautetechnique.com/midi/midiview/) to monitor and debug the MIDI data.  
 
+You can create your own MIDI instrument using fs2 SoundFont format. We recommend [Polyphone](https://www.polyphone-soundfonts.com/about-polyphone) to create instrument from individual sound samples. Of course you can just download existing instrument as well.
+
 <!-- TOC --><a name="osc"></a>
 #### OSC
 All OSC messages are in format `/prefix/oscid/parameter`, for example:  `/motion/63607/ypr`. See the table below for all OSC messages that are sent from sensor to PC. You can recieve these messages in any software of your choice - see examples for Processing, Python, DAW... We encourage you to use our premade [controlApp](https://github.com/trackme518/trackmeifyoucan_motionsensor/releases) that can also record and replay the OSC data you have captured. You can use [Hexler Protokol](https://hexler.net/protokol) to monitor and debug OSC data as well. Furthermore, we have developed standalone [OSCreplay](https://github.com/trackme518/OSCreplay) software if you like to record your experiments into .CSV table (this functionality is included in controlApp as well but OSCreplay is instended for more universal for any OSC devices / traffic).  
