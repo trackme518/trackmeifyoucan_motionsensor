@@ -24,6 +24,7 @@
    * [Firmware](#firmware)
       + [How to flash firmware](#how-to-flash-firmware)
    * [Contribute and help](#contribute-and-help)
+   * [Collaborators](#collaborators)
    * [License](#license)
 <!-- TOC end -->
 
@@ -257,6 +258,11 @@ If you bought allinone sensors you don't need to flash the firmware. This is onl
 * you made a project using provided examples - we encourgae you to share it - you can send us photos and or video to [contact](https://trackmeifyoucan.com/contact/) with "project showcase" in subject. We will share it on the website, creating a gallery of cool projects. You can also share your code here - create a pull request or send us zipped file over email / wetransfer.
 * you developed new feature / created API for new software - create a pull request or send us the code over [email](https://trackmeifyoucan.com/contact/), we will include it in this repository and add a readme for it. 
 
+<!-- TOC --><a name="collaborators"></a>
+## Collaborators
+* [@pavelhusa](https://github.com/pavelhusa)
+* [@kukas](https://github.com/kukas)
+* 
 <!-- TOC --><a name="license"></a>
 ## License
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). When using or distributing the code, give a credit in the form of "DataInMotion (https://trackmeifyoucan.com)". Please refer to the [licence](https://creativecommons.org/licenses/by-nc-sa/4.0/). Author is not liable for any damage caused by the software. Usage of the software is completely at your own risk. For commercial licensing please [contact](https://trackmeifyoucan.com/contact/) us.  
