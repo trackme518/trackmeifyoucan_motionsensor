@@ -21,7 +21,7 @@ void oscEvent(OscMessage m) {
   //println( "Address: " + m.getAddress()+" from IP: " + m.getIP()+" Typetag: " + m.getTypetag()  );
   //-----------------------------------------------------------
   //recieve quaternion rotation
-  if (m.getAddress().contains("quat") && m.checkTypetag("ffff")) {
+  if (m.getAddress().endsWith("quat") && m.checkTypetag("ffff")) {
     //println("quat received");
     qRotation = new Quaternion(m.floatValue(0), m.floatValue(1), m.floatValue(2), m.floatValue(3));//w,x,y,z -> update global variable
   }
@@ -41,13 +41,13 @@ void oscEvent(OscMessage m) {
    */
   //----------------------------------------------------
   //recieve throw event
-  else if (m.getAddress().contains("throw")) {
+  else if (m.getAddress().endsWith("throw")) {
     inAir = true;
     println("throw received");
   }
   //----------------------------------------------------
   //recieve catch event
-  else if (m.getAddress().contains("catch") && m.checkTypetag("i") ) { //catch with airtime value in millis
+  else if (m.getAddress().endsWith("catch") && m.checkTypetag("i") ) { //catch with airtime value in millis
     inAir = false;
     println("catch received");
   }
