@@ -11,6 +11,7 @@
          - [OSC](#osc)
          - [Recieve OSC](#recieve-osc)
          - [Send OSC / commands API](#send-osc-commands-api)
+         - [OSC presets](#osc-presets)
          - [Ableton](#ableton)
             * [Plugins to recieve OSC](#plugins-to-recieve-osc)
             * [Download](#download)
