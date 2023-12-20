@@ -74,7 +74,7 @@ Sensors can be used as an innovative music controller for spatial audio, to soni
     - Use our controlApp
         - Download latest release of stand-alone [controlApp](https://github.com/trackme518/trackmeifyoucan_motionsensor/releases) - you don't need to install it, just unzip it and run it.
         - Inside the controlApp click connect
-        - Enable OSC proxy ( you are using OSC plugins inside DAW / Python / Processing, by default it will send to port 8888 ) OR enable MIDI proxy - in active development, please stand by, coming soon.... (choose MIDI device that you can recieve inside DAW)
+        - Enable OSC proxy ( you are using OSC plugins inside DAW / Python / Processing, by default it will send to port 8888 ) OR enable MIDI proxy (choose MIDI device that you can recieve inside DAW)
     - set your PC IP to static.
         - sensors send data to X.X.X.230 IP by default. Where X can is range of your WiFi network. If you are not using dedeicated router you should set your PC IP to 11.11.11.230 (can be changed). 
 
