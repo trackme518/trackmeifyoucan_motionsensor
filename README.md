@@ -81,6 +81,13 @@ Sensors can be used as an innovative music controller for spatial audio, to soni
 <!-- TOC --><a name="no-code-in-any-daw-ableton-reaper-logic"></a>
 ### NO CODE in any DAW (Ableton, Reaper, Logic,...)
 <!-- TOC --><a name="midi"></a>
+We use three main approaches to creating audio based on movement:
+* play audio sample at discrete event / threshold reached (throw / catch events triggering notes or audio files but you can also threshold rotation etc.)
+* modulate synthetiser / instrument continously based on selected parameter (acceleration in x axis mapped to lfo etc)
+* modulate premade song with volume envelope, panning or various effects (reverb, delay, wet/dry)
+
+If you are looking for ways to play audio samples based on OSC / MIDI you can use [Sitila VST sampler](https://decomposer.de/sitala/#downloads) (Windows/MacOS) or [samplv1](https://www.rncbc.org/drupal/#samplv1) (Linux) - ofcourse there might be a native sampler inside your DAW already. 
+
 #### MIDI
 In case your DAW can not recieve OSC or you want simpler workflow you can use our controlApp to convert OSC messages to MIDI. On Windows you will need some sort of virtual MIDI device. In the controlApp click "MIDI" - click "MIDI device" and choose MIDI device you want to send the events to, than clik to toggle to enable "MIDI proxy".  
 
