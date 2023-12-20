@@ -86,7 +86,7 @@ We use three main approaches to creating audio based on movement:
 * modulate synthetiser / instrument continously based on selected parameter (acceleration in x axis mapped to lfo etc)
 * modulate premade song with volume envelope, panning or various effects (reverb, delay, wet/dry)
 
-If you are looking for ways to play audio samples based on OSC / MIDI you can use [Ninjas2 sampler](https://github.com/clearly-broken-software/ninjas2/releases) (Windows/MacOS/Linux) or [samplv1](https://samplv1.sourceforge.io/) (Linux) - ofcourse there might be a native sampler inside your DAW already and there is plenty of commercial options. 
+If you are looking for ways to play audio samples based on OSC / MIDI you can use [Ninjas2 sampler](https://github.com/clearly-broken-software/ninjas2/releases) (Windows/MacOS/Linux) or [samplv1](https://samplv1.sourceforge.io/) (Linux) - ofcourse there might be a native sampler inside your DAW already and there is plenty of commercial options. VST plugins are either come with installer (it will copy the plugin to foilder for you) or need to place it inside your plugins folder manually ([Windows paths](https://helpcenter.steinberg.de/hc/en-us/articles/115000177084-VST-plug-in-locations-on-Windows)). 
 
 #### MIDI
 In case your DAW can not recieve OSC or you want simpler workflow you can use our controlApp to convert OSC messages to MIDI. On Windows you will need some sort of virtual MIDI device. In the controlApp click "MIDI" - click "MIDI device" and choose MIDI device you want to send the events to, than clik to toggle to enable "MIDI proxy".  
