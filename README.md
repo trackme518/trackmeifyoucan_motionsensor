@@ -173,14 +173,14 @@ These are optional commands you can send to sensor to change it's settings or be
 
 <!-- TOC --><a name="osc-presets"></a>
 #### OSC presets
-You can define your own OSC presets in JSON format inside [controlApp](https://github.com/trackme518/trackmeifyoucan_motionsensor/releases). In presets you can rename any OSC command's address and remap it's values. Presets are located in `data/presets/generic.json` folder. Simply copy the example `generic.json` file, rename it, change `name` parameter and adjust other values as you see fit. Than inside the controlApp click OSC -> toggle enable proxy and toggle enable preset. You can also adjust OSC proxy port. After this all messages that are send to controlApp will be redirected and remapped according to chosen preset file (you can have multiple files inside preset folder, just make sure to give them unique name attribute and filename).
+You can define your own OSC presets in JSON format inside [controlApp](https://github.com/trackme518/trackmeifyoucan_motionsensor/releases). In presets you can rename any OSC command's OSC address and remap it's values. Optionally, you can  specify different OSC port and OSC proxy IP address per command - if present it will override default osc Presets are located in `data/presets/generic.json` folder. Simply copy the example `generic.json` file, rename it, change `name` parameter and adjust other values as you see fit. Than inside the controlApp click OSC -> toggle enable proxy and toggle enable preset. You can also adjust OSC proxy port. After this all messages that are send to controlApp will be redirected and remapped according to chosen preset file (you can have multiple files inside preset folder, just make sure to give them unique name attribute and filename).
 
 Supported data types inside typetag:
 * `f` - float
 * `i` - integer
 * `T` - boolean
 
-Each command has defined `min` and `max` for incoming command and `min` and `max` for outgoing command. Value is remapped using those values. You also specify `index` - at which position from original command you are taking the value (so if the index is 2 you will take third value from the original command and remap it, 0 is the first one). You can have multiple outgoing commands for single incoming command. You can also have outgoing command with multiple values (just put commas between min, max and index numbers - typetag remains without commas).
+Each command has defined `min` and `max` for incoming command and `min` and `max` for outgoing command. Value is remapped using those values. You also specify `index` - at which position from original command you are taking the value (so if the index is 2 you will take third value from the original command and remap it, 0 is the first one). You can have multiple outgoing commands for single incoming command. You can also have outgoing command with multiple values (just put commas between min, max and index numbers - typetag remains without commas). Optionally outgoing commands can have extra parameters `ip` and `port` that will override default OSC proxy port and OSC proxy ip settings (this way you can send different commands to different applications or even different computers).
 
 <!-- TOC --><a name="ableton"></a>
 #### Ableton
