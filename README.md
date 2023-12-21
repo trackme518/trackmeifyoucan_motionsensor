@@ -180,7 +180,7 @@ Supported data types inside typetag:
 * `i` - integer
 * `T` - boolean
 
-Each command has defined `min` and `max` for incoming command and `min` and `max` for outgoing command. Value is remapped using those values. You also specify `index` - at which position from original command you are taking the value (so if the index is 2 you will take third value from the original command and remap it, 0 is the first one). You can have multiple outgoing commands for single incoming command. 
+Each command has defined `min` and `max` for incoming command and `min` and `max` for outgoing command. Value is remapped using those values. You also specify `index` - at which position from original command you are taking the value (so if the index is 2 you will take third value from the original command and remap it, 0 is the first one). You can have multiple outgoing commands for single incoming command. You can also have outgoing command with multiple values (just put commas between min, max and index numbers - typetag remains without commas).
 
 <!-- TOC --><a name="ableton"></a>
 #### Ableton
